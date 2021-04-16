@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # What's My Shade?
 ---
 
@@ -48,3 +49,11 @@ For this analysis, I leveraged the Ames Housing Datasets which were created by t
 In conclusion, home square footage, garage and pool square footage, overall house quality,exterior quality, number of bathrooms,and number of car garages are the most correlated to sale price. This means that as these features increase, so does the value of the home. This means as a realtor directing your clients to improve these features can decrease the chances of receiving a low appraisal rate.  
 During my analysis, i created a linear regression and lasso regression model to predict sale price based on these highly positive correlated features with sale price. The model currently has an r2 score of .90 and an RMSE of .13 in respects to the log of sale price. 
 This means about ~90% of the variance in the data can be explained by my model compared to the baseline model, of just predicting the mean house price which is $180,558.
+=======
+# Foundation Shade Matching through Image Recognition
+
+
+
+# Description of the [data](https://github.com/the-pudding/data/tree/master/makeup-shades)
+This is a dataset of over 600 make-up shades. Each observation has the associated make-up brand, and HEX values as well as hue, saturation etc. 
+>>>>>>> d44bc4a330210765cf11f36628e9a5ba97819e17
