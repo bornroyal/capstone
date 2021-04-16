@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-# What's My Shade?
+# What's Your Shade?
 ---
 
 ### Contents:
@@ -9,51 +8,46 @@
 - [Data Sources](#Data-Sources)
 - [Data Dictionary](#Data-Dictionary)
 - [Conclusions and Recommendations](#Conclusions-and-Recommendations)
-
+- [Requirements](#Requirements)
 ---
 
 ### Problem Statement:
 
-Many realtors in Ames, IA have had increased dissastisfaction rates and reviews from clients. Over 90% percent of these bad reviews on google and yelp list the client was unhappy with the realtors lack of housing knowledge. 
-As a realtor in Ames, it is crucial to help the clients that list their homes with us to receive top dollar. In order to improve client rapport, realtors need to be experienced in what factors affect receiving a low appraisal rate. Appraisal rates are the assesors investigation on what each home is valued at based on many factors. As realtors knowing which factors affect home appraisal rate is very important to help our clients, receive what they are looking for when they come to us. The Data Science process can help answer this, and i will examine what features can increase a home's value to help our clients find areas of improvement. 
+Online shopping is a huge market. For individuals who wear make up, store closures have been a huge problem with testing and matching foundation shades. What if you don't need to go inside of a store to find a foundation that matches your skin tone? The purpose of this application is to match an individual to a shade of foundation sold by sephora or ulta (two of the biggest cosmetic stores within the United States) through image recognition. 
 
 
 
 ### Executive Summary
 
-For this analysis, I leveraged the Ames Housing Datasets which were created by the Ames Assessors Office. This dataset includes statistics about roughly 3000 homes which were sold in Ames, Iowa between the years 2006 and 2010. The datasets, which are split in to training and testing files, contain over 80 features about the houses and properties sold in Ames. Through data cleaning, exploration and analysis, followed by creating various regression models, I have developed a model that identifies the key drivers of sale price with an eye toward features which the homeowner can improve prior to listing their house, in order to increase their selling price. 
+This application utilizes various technologies listed below. It begins by connecting to the individuals computer webcam and then snapping a picture of the individuals face. If webcam is not assesible , an individual can upload an image in the form of .jpg or png.  It then recognizes which regions in the picture are indicative of skin color and extracts the pixel-based color and finds the dominant colors. It does this through naive Bayes Classifier using the Guassian Distribution. After extracting the colors in the form of RGB, the values are then compared to a dataset with over 3,000 foundation shades and it will recommend a foundation that is most similar. The recommender is using cosine similarity of the hex values of the skin compared to the dataset of foundations. 
+
 
 
 
 ### Data Sources
-* [`train.csv`](./datasets/train.csv): Ames Housing Data Training Dataset | [data dictionary](http://jse.amstat.org/v19n3/decock/DataDocumentation.txt))
-* [`test.csv`](./datasets/test.csv): Ames Housing Data Training Dataset 
-* [`ames_train.csv`](./datasets/test.csv): Cleaned Ames Housing Data Training Dataset 
-* [`ames_test.csv`](./datasets/test.csv): Cleaned Ames Housing Data Testing Dataset 
+* [`allShades.csv`](./Data/allShades.csv):  | Description of the [data](https://github.com/the-pudding/data/tree/master/makeup-shades)
+* [`allshades_updated.csv`](./Data/allshades_updated.csv): An Updated Version of the dataset with the converted HEX values to RGB 
+
+
+
 
 
 ### **Data Dictionary**
 
 |Feature|Type|Dataset|Description|
 |---|---|---|---|
-|state|object|scores_2018|State within the U.S.(includes D.C.)| 
-|participation_x|float|scores_2018|State rate of participation for the SAT| 
-|evidence-based_reading_and_writing|integer|scores_2018|SAT average reading and writing score| 
-|math|integer|scores_2018|SAT average math score| 
-|total|integer|scores_2018|Total SAT average score| 
-|participation_y|float|scores_2018|State rate of participation for the ACT| 
-|avg_score|float|scores_2018|ACT average score| 
+|brand|object|allShades|The Name of The Brand| 
+
+
+### Technology Requirements 
+This includes the following:
+- python 3.6 or later
+- pandas
+- numpy
+- mediapipe 
+- open cv 
+- colorsys
+- Scikit learn 
 
 
 ### Conclusions and Recommendations
-In conclusion, home square footage, garage and pool square footage, overall house quality,exterior quality, number of bathrooms,and number of car garages are the most correlated to sale price. This means that as these features increase, so does the value of the home. This means as a realtor directing your clients to improve these features can decrease the chances of receiving a low appraisal rate.  
-During my analysis, i created a linear regression and lasso regression model to predict sale price based on these highly positive correlated features with sale price. The model currently has an r2 score of .90 and an RMSE of .13 in respects to the log of sale price. 
-This means about ~90% of the variance in the data can be explained by my model compared to the baseline model, of just predicting the mean house price which is $180,558.
-=======
-# Foundation Shade Matching through Image Recognition
-
-
-
-# Description of the [data](https://github.com/the-pudding/data/tree/master/makeup-shades)
-This is a dataset of over 600 make-up shades. Each observation has the associated make-up brand, and HEX values as well as hue, saturation etc. 
->>>>>>> d44bc4a330210765cf11f36628e9a5ba97819e17
